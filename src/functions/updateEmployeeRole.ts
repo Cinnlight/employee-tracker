@@ -1,7 +1,7 @@
 import inquirer from "inquirer";
 import { pool } from "../connection";
 
-export const updateEmployee = async (mainMenu: () => Promise<void>) => {
+export const updateEmployeeRole = async (mainMenu: () => Promise<void>) => {
     try {
         // Get all employees to display in the list of choices
         const employeesResult = await pool.query('SELECT id, first_name, last_name FROM employee');
@@ -35,6 +35,7 @@ export const updateEmployee = async (mainMenu: () => Promise<void>) => {
             },
         ]);
 
+        // Update the employee's role in the db
         await pool.query('UPDATE employee SET role_id = $1 WHERE id = $2 RETURNING *', [roleId, employeeId]);
 
         console.log('Employee role successfully updated.');
