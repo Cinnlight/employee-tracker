@@ -9,6 +9,7 @@ import { viewAllDepartments } from './functions/viewAllDepartments';
 import { addEmployee } from './functions/addEmployee';
 import { addRole } from './functions/addRole';
 import { addDepartment } from './functions/addDepartment';
+import { updateEmployeeRole } from './functions/updateEmployeeRole';
 
 // Function using connectToDb to prompt pg to attempt a connection to the database
 const startApp = async () => {
@@ -70,7 +71,7 @@ export const mainMenu = async () => {
             await mainMenu();
             break;
         case 'Update employee role':
-            await updateEmployeeRole();
+            await updateEmployeeRole(mainMenu);
             await mainMenu();
             break;
         case 'Exit':
