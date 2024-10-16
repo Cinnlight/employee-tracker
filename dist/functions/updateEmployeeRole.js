@@ -12,10 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateEmployee = void 0;
+exports.updateEmployeeRole = void 0;
 const inquirer_1 = __importDefault(require("inquirer"));
 const connection_1 = require("../connection");
-const updateEmployee = (mainMenu) => __awaiter(void 0, void 0, void 0, function* () {
+const updateEmployeeRole = (mainMenu) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // Get all employees to display in the list of choices
         const employeesResult = yield connection_1.pool.query('SELECT id, first_name, last_name FROM employee');
@@ -45,6 +45,7 @@ const updateEmployee = (mainMenu) => __awaiter(void 0, void 0, void 0, function*
                 message: 'Enter the employee\'s new role ID:',
             },
         ]);
+        // Update the employee's role in the db
         yield connection_1.pool.query('UPDATE employee SET role_id = $1 WHERE id = $2 RETURNING *', [roleId, employeeId]);
         console.log('Employee role successfully updated.');
         yield mainMenu();
@@ -54,4 +55,4 @@ const updateEmployee = (mainMenu) => __awaiter(void 0, void 0, void 0, function*
         yield mainMenu();
     }
 });
-exports.updateEmployee = updateEmployee;
+exports.updateEmployeeRole = updateEmployeeRole;

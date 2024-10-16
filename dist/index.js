@@ -23,6 +23,7 @@ const viewAllDepartments_1 = require("./functions/viewAllDepartments");
 const addEmployee_1 = require("./functions/addEmployee");
 const addRole_1 = require("./functions/addRole");
 const addDepartment_1 = require("./functions/addDepartment");
+const updateEmployeeRole_1 = require("./functions/updateEmployeeRole");
 // Function using connectToDb to prompt pg to attempt a connection to the database
 const startApp = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -80,7 +81,7 @@ const mainMenu = () => __awaiter(void 0, void 0, void 0, function* () {
             yield (0, exports.mainMenu)();
             break;
         case 'Update employee role':
-            yield updateEmployeeRole();
+            yield (0, updateEmployeeRole_1.updateEmployeeRole)(exports.mainMenu);
             yield (0, exports.mainMenu)();
             break;
         case 'Exit':
