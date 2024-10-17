@@ -88,7 +88,7 @@ const mainMenu = () => __awaiter(void 0, void 0, void 0, function* () {
             yield process.exit(0);
             break;
         default:
-            console.log('Invalid choice, perhaps the choice you made is improperly set up in index.js.');
+            console.log('Invalid choice, perhaps the choice you made is improperly set up in index.ts.');
     }
 });
 exports.mainMenu = mainMenu;
