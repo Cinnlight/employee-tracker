@@ -17,6 +17,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const pg_1 = __importDefault(require("pg"));
 const { Pool } = pg_1.default;
 dotenv_1.default.config();
+console.log('Database User:', process.env.DB_USER);
 const pool = new Pool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
