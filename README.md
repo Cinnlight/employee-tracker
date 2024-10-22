@@ -33,8 +33,6 @@ To run this application locally, follow these steps:
      DB_NAME=employee_db
      DB_USER=your_postgres_username
      DB_PASSWORD=your_postgres_password
-     DB_HOST=localhost
-     DB_PORT=5432
      ```
 
 4. **Run the SQL Schema**:
