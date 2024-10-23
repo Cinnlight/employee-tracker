@@ -103,6 +103,9 @@ The PostgreSQL database consists of three main tables:
   - Update an existing employee's role
 - **Exit**: Close the application
 
+## Video Walkthrough
+https://drive.google.com/file/d/1LRwW9ByvGhn55pVCdnWzIBNGvTD_ERGJ/view
+
 ## License
 This project is licensed under the **MIT License**. Feel free to modify and use the code as per your needs.
 
